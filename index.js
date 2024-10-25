@@ -38,7 +38,7 @@ program
 
     items.push(newItem);
 
-  fs.writeFileSync("./data/items.json", JSON.stringify(items));
+    fs.writeFileSync("./data/items.json", JSON.stringify(items));
 
     console.log(chalk.green("New Item added successfully!!."));
   });
@@ -62,9 +62,13 @@ program
       return;
     }
 
-    const itemToUpdate = items.find((currentItem) => currentItem.title === title);
+    const itemToUpdate = items.find(
+      (currentItem) => currentItem.title === title,
+    );
     if (!itemToUpdate) {
-      console.log(chalk.bgRed(`Item with the title '${title}' does not exist.`));
+      console.log(
+        chalk.bgRed(`Item with the title '${title}' does not exist.`),
+      );
       return;
     }
 
@@ -72,7 +76,9 @@ program
     if (price) itemToUpdate.price = price;
 
     fs.writeFileSync("./data/items.json", JSON.stringify(items));
-    console.log(chalk.bgGreen(`Updated item with title '${title}' successfully`));
+    console.log(
+      chalk.bgGreen(`Updated item with title '${title}' successfully`),
+    );
   });
 
 //Read Items

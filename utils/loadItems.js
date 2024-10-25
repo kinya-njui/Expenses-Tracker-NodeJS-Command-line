@@ -8,4 +8,3 @@ function loadItems(path) {
 }
 
 export default loadItems;
- 
